@@ -1,0 +1,17 @@
+docker swarm init --advertise-addr <Master Private IP>
+docker node ls
+docker service create --replicas 2 -p 80:80 --name <container_name> <image_name>
+docker service create --mode global -p 80:80 --name <container_name> <image_name>
+docker service ps <container_name>
+docker service update --image <image_name> <container_name>
+docker service rollback <container_name>
+docker promote <node_name>
+docker node update --availability pause <node_name>
+docker network ls
+docker service rm <service_name>
+docker service scale <service_name>=<count>
+docker swarm join-token worker
+
+
+
+
